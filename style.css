@@ -1,269 +1,331 @@
 @import url('https://www.instagram.com/fahimamelia/');
 @import url('https://www.tiktok.com/@fahimamelia?is_from_webapp=1&sender_device=pc');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
 }
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
-body{
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    background-color: black;
-    color: white
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+  color: #f5f5f5;
 }
 
-header{
-    margin-top: 20px;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:1rem 9%;
-    background-color: transparent;
-    filter: drop-shadow(10px);
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 9%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: background 0.3s ease;
 }
 
-.logo{
-    font-size: 3rem;
-    color: pink (56, 20, 20); 
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.5s ease;
-    text-decoration: none; 
+header:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.logo:visited {
-    color: pink (56, 20, 20); 
+/* ===== Logo ===== */
+.logo {
+  font-size: 3rem;
+  color: #ff4da6;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1);
-    color: pink; 
+  transform: scale(1.1);
+  color: #ff80c0;
+  text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff80c0;
 }
 
-
-.logo:hover{
-   transform: scale(1.1);
+/* ===== Navigation ===== */
+nav a {
+  font-size: 1.8rem;
+  color: #e5e5e5;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
 }
 
-nav a{
-    font-size: 1.8rem;
-    color: whitesmoke;
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-
-nav a:hover,
-nav a.active{
-    color: pink;
-    border-bottom: 3px solid pink;
-}
-
-@media(max-width:995px){
-    nav{
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid pink;
-        border-bottom: 3px solid pink;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
-        background-color: rgb(212, 196, 196);
-        border-top: 0.1rem solid pink;
-    }
-
-nav.active{
-    display: block;
-}
-
-nav a{
-    display: block;
-    font-size: 2rem;
-    margin: 3rem 0;
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -5px;
+  background: #ff4da6;
+  transition: 0.3s ease;
+  border-radius: 2px;
 }
 
 nav a:hover,
-nav a.active{
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border-bottom: 0.5rem solid pink;
+nav a.active {
+  color: #ff4da6;
 }
 
-}
-section{
-    min-height: 100vh;
-    padding: 5rem 9% 5rem;
-}
-
-.home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: black;
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
-.home-content h1{
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
+/* ===== Sections ===== */
+section {
+  min-height: 100vh;
+  padding: 8rem 9% 5rem;
 }
 
-span{
-    color: pink;
+/* ===== Home Section ===== */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  background: transparent;
 }
 
-.home-content h3{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+.home-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-.home-img img{
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px solid pink;
-    cursor: pointer;
-    transition: 0.2s linear;
+.home-content h3 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.home-img img:hover{
-    font-size: 1.8rem;
-    font-weight: 500;
+span {
+  color: #ff4da6;
 }
 
-.social-icons a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid pink;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
+/* ===== Profile Image ===== */
+.home-img img {
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #ff4da6, 0 0 60px #ff80c0;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
 }
 
-.social-icons a:hover{
-    color: black;
-    transform: scale(1.3) translateY(-5px);
-    background-color: pink;
-    box-shadow: 0 0 25px solid pink;
+.home-img img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 0 40px #ff4da6, 0 0 80px #ff80c0;
 }
 
-.btn{
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background-color: pink;
-    border-radius: 4rem;
+/* ===== Social Icons ===== */
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: 0.2rem solid #ff4da6;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  color: #ff4da6;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #ff4da6;
+  color: #0f0f0f;
+  transform: translateY(-5px) scale(1.2);
+  box-shadow: 0 0 20px #ff4da6, 0 0 40px #ff80c0;
+}
+
+/* ===== Button ===== */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: #ff4da6;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: #1b1b1b;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff4da6;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #ff4da6;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff4da6, 0 0 40px #ff80c0;
+  border: 2px solid #ff4da6;
+}
+
+/* ===== Typing Text Effect ===== */
+.typing-text {
+  font-size: 3.4rem;
+  font-weight: 600;
+  min-width: 280px;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.typing-text span::before {
+  content: "software engineer";
+  color: #ffdfef;
+  animation: words 12s infinite;
+}
+
+.typing-text span::after {
+  content: "";
+  background: #0f0f0f;
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid #ff4da6;
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 4s steps(20) infinite alternate;
+}
+
+/* Cursor blink */
+@keyframes cursor {
+  50% { border-color: transparent; }
+}
+
+/* Typing effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: calc(100% + 8px); }
+}
+
+/* Change words */
+@keyframes words {
+  0%,20%   { content: "student"; }
+  21%,40%  { content: "research enthusiast"; }
+  41%,60%  { content: "beginner violinist"; }
+  61%,80%  { content: "digital marketer"; }
+  81%,100% { content: "AI enthusiast"; }
+}
+
+/* ===== Media Queries ===== */
+@media(max-width:1000px) {
+  .home {
+    gap: 4rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 60vw;
+    margin-top: 2rem;
+  }
+
+  .home-content h1 {
+    font-size: 4.5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.8rem;
+  }
+}
+
+@media(max-width:600px) {
+  nav a {
     font-size: 1.6rem;
-    color: chocolate;
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: 2px solid pink;
-    transition: 0.3s ease;
-    cursor: pointer
+    margin-left: 2rem;
+  }
+  
+  .btn {
+    font-size: 1.4rem;
+  }
 }
 
-.btn:hover{
-    transform: scale(1.03);
-    background-color: black;
-    color: pink;
-    box-shadow: 0 0 25px pink;;
+html {
+  scroll-behavior: smooth;
 }
 
-.typing-text{
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
+/* ===== EDUCATION SECTION ===== */
+.education {
+  padding: 80px 10%;
+  background: #111;           /* warna background section */
+  color: #fff;
+  text-align: center;
 }
 
-.typing-text span{
-   position: relative; 
+.education .heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #ff4da6;             /* warna judul */
 }
 
-.typing-text span::before{
-    content: 'software engineer';
-    color:beige;
-    animation: words 20s infinite;
+.edu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.typipng-text span::after{
-    content: '';
-    background-color: pink;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid pink;
-    right: -8;
-    animation: cursor 0.6s infinite;
+.edu-card {
+  background: #1c1c1c;
+  padding: 25px 30px;
+  border-radius: 15px;
+  width: 280px;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 77, 166, 0.3);
 }
 
-@keyframes cursor{
-    to{
-        border-left: 3px solid pink;
-    }
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(255, 77, 166, 0.5);
 }
 
-@keyframes words{
-    0%,20%{
-        content: 'software engineer';
-    }
-    21%,40%{
-        content: 'web developer';
-    }
-    41%,60%{
-        content: 'graphic designer';
-    }
-    61%,80%{
-        content: 'digital marketer';
-    }
+.edu-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #ff4da6;
 }
 
-@media(max-width:1000px){
-    .home{
-        gap: 4rem;
-    }
+.edu-card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #ddd;
 }
 
-@media(max-width:995px){
-    .home{
-        flex-direction: column;
-        margin: 5rem 4rem;
-    }
-
-.home.home-content h3{
-    font-size: 2.5rem;
+/* Tombol link drive */
+.drive-btn {
+  display: inline-block;
+  background: #ff4da6;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.home.home-content h1{
-    font-size: 5rem;
-}
-
-.home-img img{
-    width: 70vw;
-    margin-top: 4rem;
-}
+.drive-btn:hover {
+  background: #ff1a8c;
 }
